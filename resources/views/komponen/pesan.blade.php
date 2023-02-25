@@ -1,0 +1,21 @@
+{{-- Pesan Success --}}
+@if (Session::has('Success'))
+    <div class="pt-3">
+        <div class="alert alert-success">
+            {{ Session::get('Success') }}
+        </div>
+    </div>
+@endif
+
+{{-- Pesan Gagal --}}
+@if ($errors->any())
+    <div class="pt-3">
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $item)
+                    <li>{{ $item }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+@endif
